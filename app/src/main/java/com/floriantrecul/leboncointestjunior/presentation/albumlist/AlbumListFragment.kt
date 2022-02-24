@@ -16,6 +16,7 @@ class AlbumListFragment : BaseFragment<FragmentAlbumListBinding, AlbumListViewMo
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.onEvent(AlbumEvent.LoadAlbums)
     }
 
     override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?) =
