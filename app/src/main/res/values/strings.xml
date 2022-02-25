@@ -1,3 +1,10 @@
 <resources>
+
+    <!-- ALL -->
     <string name="app_name">LeboncoinTestJunior</string>
+
+    <!-- Error Message -->
+    <string name="error_message_title_unknown">Erreur</string>
+    <string name="error_message_info_unknown">Une erreur inconnue est survenue.</string>
+
 </resources>

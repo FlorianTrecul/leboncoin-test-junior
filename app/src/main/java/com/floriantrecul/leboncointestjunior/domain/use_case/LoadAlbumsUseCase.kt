@@ -1,15 +1,15 @@
 package com.floriantrecul.leboncointestjunior.domain.use_case
 
+import com.floriantrecul.leboncointestjunior.data.entities.AlbumEntity
 import com.floriantrecul.leboncointestjunior.domain.repository.AlbumRepository
-import timber.log.Timber
+import com.floriantrecul.leboncointestjunior.util.Resource
 
 class LoadAlbumsUseCase(
     private val albumRepository: AlbumRepository
 ) {
 
-    suspend operator fun invoke() {
-        val albums = albumRepository.loadAlbums()
-        Timber.d("albums $albums")
+    suspend operator fun invoke(): Resource<List<AlbumEntity>> {
+        return albumRepository.loadAlbums()
     }
 
 }
