@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.floriantrecul.leboncointestjunior.R
 import com.floriantrecul.leboncointestjunior.databinding.FragmentAlbumListBinding
 import com.floriantrecul.leboncointestjunior.presentation.BaseFragment
 import com.floriantrecul.leboncointestjunior.util.hide
@@ -23,6 +25,7 @@ class AlbumListFragment : BaseFragment<FragmentAlbumListBinding, AlbumListViewMo
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.album_list_toolbar_title)
 
         setupUi()
     }

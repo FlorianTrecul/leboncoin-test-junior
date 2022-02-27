@@ -8,6 +8,6 @@
     <fragment
         android:id="@+id/albumListFragment"
         android:name="com.floriantrecul.leboncointestjunior.presentation.albumlist.AlbumListFragment"
-        android:label="fragment_album_list"
+        android:label="@string/album_list_toolbar_title"
         tools:layout="@layout/fragment_album_list" />
 </navigation>
