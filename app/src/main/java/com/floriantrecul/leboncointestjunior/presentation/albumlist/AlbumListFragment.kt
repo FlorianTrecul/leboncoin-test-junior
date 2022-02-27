@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.floriantrecul.leboncointestjunior.databinding.FragmentAlbumListBinding
 import com.floriantrecul.leboncointestjunior.presentation.BaseFragment
 import com.floriantrecul.leboncointestjunior.util.hide
@@ -12,12 +13,13 @@ import com.floriantrecul.leboncointestjunior.util.observeInLifecycle
 import com.floriantrecul.leboncointestjunior.util.show
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.onEach
-import timber.log.Timber
 
 @AndroidEntryPoint
 class AlbumListFragment : BaseFragment<FragmentAlbumListBinding, AlbumListViewModel>() {
 
     override val viewModel: AlbumListViewModel by viewModels()
+
+    private lateinit var albumListAdapter: AlbumListAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -27,6 +29,16 @@ class AlbumListFragment : BaseFragment<FragmentAlbumListBinding, AlbumListViewMo
 
     private fun setupUi() {
         subscribeToCollects()
+        setupRecyclerView()
+    }
+
+    private fun setupRecyclerView() = with(binding) {
+        albumListAdapter = AlbumListAdapter()
+        recyclerViewAlbumList.apply {
+            adapter = albumListAdapter
+            layoutManager = LinearLayoutManager(requireContext())
+            setHasFixedSize(true)
+        }
     }
 
     private fun subscribeToCollects() = with(binding) {
@@ -35,12 +47,12 @@ class AlbumListFragment : BaseFragment<FragmentAlbumListBinding, AlbumListViewMo
         viewModel.state
             .onEach { state ->
                 when (state) {
-                    is AlbumListState.Loading -> progressBarAlbumList.show()
+                    is AlbumListState.Loading -> loadGroupAlbumList.show()
                     is AlbumListState.Success -> {
-                        progressBarAlbumList.hide()
-                        Timber.d("albums ${state.albums}")
+                        loadGroupAlbumList.hide()
+                        albumListAdapter.submitList(state.albums)
                     }
-                    is AlbumListState.Error -> progressBarAlbumList.hide()
+                    is AlbumListState.Error -> loadGroupAlbumList.hide()
                     else -> Unit
                 }
             }

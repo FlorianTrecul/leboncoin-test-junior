@@ -7,4 +7,7 @@
     <string name="error_message_title_unknown">Erreur</string>
     <string name="error_message_info_unknown">Une erreur inconnue est survenue.</string>
 
+    <!-- AlbumListFragment -->
+    <string name="album_list_load_albums">Chargement des données en cours …</string>
+
 </resources>

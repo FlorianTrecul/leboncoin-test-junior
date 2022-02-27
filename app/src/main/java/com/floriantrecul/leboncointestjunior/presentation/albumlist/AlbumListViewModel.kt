@@ -37,8 +37,8 @@ class AlbumListViewModel @Inject constructor(
         }
     }
 
-    fun onEvent(listEvent: AlbumListEvent) {
-        when (listEvent) {
+    fun onEvent(event: AlbumListEvent) {
+        when (event) {
             is AlbumListEvent.LoadAlbums -> loadAlbums()
         }
     }

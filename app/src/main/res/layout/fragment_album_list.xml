@@ -26,5 +26,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/load_text_album_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp8"
+        android:text="@string/album_list_load_albums"
+        app:layout_constraintEnd_toEndOf="@id/progress_bar_album_list"
+        app:layout_constraintStart_toStartOf="@id/progress_bar_album_list"
+        app:layout_constraintTop_toBottomOf="@id/progress_bar_album_list" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/load_group_album_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="load_text_album_list,progress_bar_album_list" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

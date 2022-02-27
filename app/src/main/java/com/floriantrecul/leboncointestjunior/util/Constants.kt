@@ -2,5 +2,5 @@ package com.floriantrecul.leboncointestjunior.util
 
 object Constants {
 
-    const val DATABASE_NAME = "LeboncoinTestJunior.db"
+    const val IMAGE_SIZE = 600
 }
