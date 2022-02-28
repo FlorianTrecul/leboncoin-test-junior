@@ -18,6 +18,7 @@ class AlbumRepositoryImpl @Inject constructor(
 ) : AlbumRepository {
 
     override suspend fun loadAlbums(): Flow<Resource<List<AlbumEntity>>> = flow {
+        emit(Resource.Loading)
         try {
             val albumsDto = apiService.getAlbums()
             emit(

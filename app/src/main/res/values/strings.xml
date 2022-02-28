@@ -2,18 +2,18 @@
 
     <!-- ALL -->
     <string name="app_name">LeboncoinTestJunior</string>
-    <string name="retry">Réessayer</string>
+    <string name="retry">Retry</string>
 
     <!-- Error Message -->
-    <string name="error_message_title_unknown">Erreur</string>
-    <string name="error_message_title_no_network">Erreur de réseau</string>
-    <string name="error_message_title_no_load">Erreur de chargement</string>
-    <string name="error_message_info_unknown">Une erreur inconnue est survenue.</string>
-    <string name="error_message_info_no_network">Vous ne semblez pas avoir de connexion internet. Vérifiez votre réseau.</string>
-    <string name="error_message_info_no_load">Une erreur inconnue est survenue. Vos données sont inacessibles.</string>
+    <string name="error_message_title_unknown">Error</string>
+    <string name="error_message_title_no_network">Network error</string>
+    <string name="error_message_title_no_load">Loading error</string>
+    <string name="error_message_info_unknown">An unknown error has occurred.</string>
+    <string name="error_message_info_no_network">You don\'t seem to have an internet connection. Check your network.</string>
+    <string name="error_message_info_no_load">An unknown error has occurred. Your data is inaccessible.</string>
 
     <!-- AlbumListFragment -->
-    <string name="album_list_toolbar_title">Liste des albums</string>
-    <string name="album_list_title_load_albums">Chargement des données en cours …</string>
+    <string name="album_list_toolbar_title">List of albums</string>
+    <string name="album_list_title_load_albums">Loading data in progress …</string>
 
 </resources>

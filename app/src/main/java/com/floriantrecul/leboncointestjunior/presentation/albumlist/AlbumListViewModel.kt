@@ -22,7 +22,7 @@ class AlbumListViewModel @Inject constructor(
     private val _albumListFlowEvent = MutableSharedFlow<AlbumListUiEvent>()
     val albumListFlowEvent = _albumListFlowEvent.asSharedFlow()
 
-    private val _state = MutableStateFlow<AlbumListState>(AlbumListState.Loading)
+    private val _state = MutableStateFlow<AlbumListState>(AlbumListState.Empty)
     val state = _state.asStateFlow()
 
     private fun loadAlbums() = viewModelScope.launch(Dispatchers.IO) {
