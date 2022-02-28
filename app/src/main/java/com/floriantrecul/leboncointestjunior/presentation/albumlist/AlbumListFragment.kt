@@ -10,9 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.floriantrecul.leboncointestjunior.R
 import com.floriantrecul.leboncointestjunior.databinding.FragmentAlbumListBinding
 import com.floriantrecul.leboncointestjunior.presentation.BaseFragment
-import com.floriantrecul.leboncointestjunior.util.hide
-import com.floriantrecul.leboncointestjunior.util.observeInLifecycle
-import com.floriantrecul.leboncointestjunior.util.show
+import com.floriantrecul.leboncointestjunior.util.*
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.onEach
 
@@ -25,7 +24,8 @@ class AlbumListFragment : BaseFragment<FragmentAlbumListBinding, AlbumListViewMo
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.album_list_toolbar_title)
+        (activity as AppCompatActivity).supportActionBar?.title =
+            getString(R.string.album_list_toolbar_title)
 
         setupUi()
     }
@@ -57,6 +57,27 @@ class AlbumListFragment : BaseFragment<FragmentAlbumListBinding, AlbumListViewMo
                     }
                     is AlbumListState.Error -> loadGroupAlbumList.hide()
                     else -> Unit
+                }
+            }
+            .observeInLifecycle(viewLifecycleOwner)
+
+        collectEvents()
+    }
+
+    private fun collectEvents() {
+        viewModel.albumListFlowEvent
+            .onEach { event ->
+                when (event) {
+                    is AlbumListViewModel.AlbumListUiEvent.ShowSnackbarUiMessage -> requireView().showSnackbar(
+                        event.message,
+                        Snackbar.LENGTH_INDEFINITE
+                    ) {
+                        action(event.action) {
+                            when (event.action) {
+                                R.string.retry -> viewModel.onEvent(AlbumListEvent.LoadAlbums)
+                            }
+                        }
+                    }
                 }
             }
             .observeInLifecycle(viewLifecycleOwner)
