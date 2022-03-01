@@ -30,11 +30,17 @@ class AlbumListFragment : BaseFragment<FragmentAlbumListBinding, AlbumListViewMo
         setupUi()
     }
 
+    /**
+     * This function setup the Ui screen
+     */
     private fun setupUi() {
         subscribeToCollects()
         setupRecyclerView()
     }
 
+    /**
+     * This function setup the RecyclerView
+     */
     private fun setupRecyclerView() = with(binding) {
         albumListAdapter = AlbumListAdapter()
         recyclerViewAlbumList.apply {
@@ -44,6 +50,9 @@ class AlbumListFragment : BaseFragment<FragmentAlbumListBinding, AlbumListViewMo
         }
     }
 
+    /**
+     * This function subscribe to the collects events
+     */
     private fun subscribeToCollects() = with(binding) {
         viewModel.onEvent(AlbumListEvent.LoadAlbums)
 
@@ -64,6 +73,9 @@ class AlbumListFragment : BaseFragment<FragmentAlbumListBinding, AlbumListViewMo
         collectEvents()
     }
 
+    /**
+     * This function collects the events emitted on the shared stream
+     */
     private fun collectEvents() {
         viewModel.albumListFlowEvent
             .onEach { event ->

@@ -24,7 +24,7 @@ class AlbumRepositoryImpl @Inject constructor(
             emit(
                 Resource.Success(
                     albumsDto.map { albumDto ->
-                        albumDtoMapper.mapFromEntity(albumDto)
+                        albumDtoMapper.mapToEntity(albumDto)
                     }
                 )
             )

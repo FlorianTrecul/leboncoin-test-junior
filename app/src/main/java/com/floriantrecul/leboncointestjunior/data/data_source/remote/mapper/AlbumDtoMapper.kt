@@ -4,20 +4,20 @@ import com.floriantrecul.leboncointestjunior.data.data_source.remote.dto.AlbumDt
 import com.floriantrecul.leboncointestjunior.data.entities.AlbumEntity
 import com.floriantrecul.leboncointestjunior.data.mapper.Mapper
 
-class AlbumDtoMapper : Mapper<AlbumDto, AlbumEntity> {
+class AlbumDtoMapper : Mapper<AlbumEntity, AlbumDto> {
 
-    override fun mapFromEntity(type: AlbumDto): AlbumEntity {
-        return AlbumEntity(
-                albumId = type.albumId,
-                id = type.id,
-                title = type.title,
-                url = type.url,
-                thumbnailUrl = type.thumbnailUrl
-            )
+    override fun mapFromEntity(type: AlbumEntity): AlbumDto {
+        return AlbumDto(
+            albumId = type.albumId,
+            id = type.id,
+            title = type.title,
+            url = type.url,
+            thumbnailUrl = type.thumbnailUrl
+        )
     }
 
-    override fun mapToEntity(type: AlbumEntity): AlbumDto {
-        return AlbumDto(
+    override fun mapToEntity(type: AlbumDto): AlbumEntity {
+        return AlbumEntity(
             albumId = type.albumId,
             id = type.id,
             title = type.title,

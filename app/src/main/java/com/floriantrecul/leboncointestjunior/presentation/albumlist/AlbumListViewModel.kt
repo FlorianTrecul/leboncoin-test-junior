@@ -25,6 +25,9 @@ class AlbumListViewModel @Inject constructor(
     private val _state = MutableStateFlow<AlbumListState>(AlbumListState.Empty)
     val state = _state.asStateFlow()
 
+    /**
+     * This function loads the state of the album resource from the LoadAlbumUseCase use case
+     */
     private fun loadAlbums() = viewModelScope.launch(Dispatchers.IO) {
         albumsUseCase.loadAlbums()
             .onEach { albumsState ->
@@ -49,6 +52,10 @@ class AlbumListViewModel @Inject constructor(
             .launchIn(viewModelScope)
     }
 
+    /**
+     * This function handle the user's event
+     * @param event is an AlbumListEvent to handle the user's event
+     */
     fun onEvent(event: AlbumListEvent) {
         when (event) {
             is AlbumListEvent.LoadAlbums -> loadAlbums()
