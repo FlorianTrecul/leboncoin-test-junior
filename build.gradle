@@ -27,6 +27,7 @@ buildscript {
         coilVersion = "1.4.0"
         coroutinesVersion = "1.6.0"
         moshiVersion = "1.13.0"
+        okhttpLoggingInterceptorVersion = "5.0.0-alpha.2"
         retrofitVersion = "2.9.0"
         timberVersion = "5.0.1"
 
