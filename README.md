@@ -40,13 +40,13 @@ L'utilisation de la Clean architecture permets de pouvoir faire évoluer rapidem
 - Ajouter l'écran de détail d'un item.
 
 ## Pourquoi vous rejoindre ?
-Pouvoir participer à un projet d'ampleur avec une équipe qualifiée qui peut m'accompagner et me permettre d'apprendre et de monter en compétences.
-Une des raisons pour laquelle je veux travailler avec des personnes plus expérimentées, c'est de pouvoir aborder des sujets importants en développement tel que cité précédemment la partie des tests qui me parait important et etc.
+Pouvoir participer à un projet d'ampleur tel que Leboncoin, qui est utilisé par des millions d'utilisateurs par mois, serait une très bonne expérience. 
+Intégrer une équipe qualifiée qui peut m'accompagner et me permettre d'apprendre et de monter en compétences et cela permet de pouvoir aborder des sujets importants en développement tel que cité précédemment comme la partie des tests unitaires, etc. Mais aussi sur divers autres sujets tout aussi intéressant.
+Je suis convaincu que je pourrais apporter bien plus que mes compétences de développeur mobile.
 
 ## Conclusion
 Cela m'a permis de me challenger à faire une application dans un temps imparti avec des consignes claires. 
-Mettre en pratique mes connaissances et mon expérience en y installant une architecture qui peut permettre de rajouter des nouvelles fonctionnalités de façon simple et rapide sans 
-impacter l'existant.
+Mettre en pratique mes connaissances et mon expérience en y installant une architecture qui peut permettre de rajouter des nouvelles fonctionnalités de façon simple et rapide sans impacter l'existant.
 
 
 
